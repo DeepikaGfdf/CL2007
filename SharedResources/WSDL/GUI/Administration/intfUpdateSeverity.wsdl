@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://www.tibco.com/CommonLE2/Public/Common" xmlns:pfx0="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Configuration/Severity" xmlns:pfx1="http://www.tibco.com/CommonLE2/Public/Common/Dummy" xmlns:pfx2="http://www.tibco.com/CommonLE2/namespace/private/Common" xmlns:pfx3="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Configuration/Query" xmlns:tns="http://www.tibco.com/CommonLE2/namespace/Administration/GUIServices/Severity" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Administration/GUIServices/Severity">
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Administration/Configuration/ExceptionSeverity.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Configuration/Severity"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Common/DummyReturnMessage.xsd" namespace="http://www.tibco.com/CommonLE2/Public/Common/Dummy"/>
+    <import location="../../../SchemaDefinitions/Private/Common/LocalExceptions.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/private/Common"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Administration/Configuration/ConfigurationQuery.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Configuration/Query"/>
+    <import location="../../../SchemaDefinitions/Public/Common/ErrorMessage.xsd" namespace="http://www.tibco.com/CommonLE2/Public/Common"/>
+    <message name="ExceptionSeverities">
+        <part element="pfx0:ExceptionSeverities" name="parameters"/>
+    </message>
+    <message name="Error">
+        <part element="ns:Error" name="parameters"/>
+    </message>
+    <message name="Query">
+        <part element="pfx3:Query" name="parameters"/>
+    </message>
+    <message name="Dummy"/>
+    <portType name="portType">
+        <operation name="UpdateSeverityOp">
+            <input message="tns:ExceptionSeverities"/>
+            <output message="tns:Dummy"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="RetrieveSpecificSeverityOp">
+            <input message="tns:Query"/>
+            <output message="tns:ExceptionSeverities"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="DeleteSeverityOp">
+            <input message="tns:Query"/>
+            <output message="tns:Dummy"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="CreateSeverityOp">
+            <input message="tns:ExceptionSeverities"/>
+            <output message="tns:Dummy"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="RetrieveSeverityListWithSysIDOp">
+            <input message="tns:Query"/>
+            <output message="tns:ExceptionSeverities"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+    </portType>
+</definitions>

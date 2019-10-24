@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Exception/ExceptionRequest.xsd" xmlns:Common="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public/Exception/ExceptionRequest.xsd">
+	<xsd:import namespace="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" schemaLocation="../Common/RequestHeader.xsd"/>
+	<xsd:element name="ExceptionRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Common:Header"/>
+				<xsd:element name="ExceptionCode" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Message" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionData" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DumpAnalysis" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DataEncoding" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="CorrelationID" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Custom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Timeout" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ReplyDestination" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="NotificationChannel" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="RenderID" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="NotificationDetails">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element minOccurs="0" name="Addressees">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="To" type="xsd:string"/>
+										<xsd:element maxOccurs="unbounded" minOccurs="0" name="Cc" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element minOccurs="0" name="Subject">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element minOccurs="0" name="prefix" type="xsd:string"/>
+										<xsd:element minOccurs="0" name="suffix" type="xsd:string"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

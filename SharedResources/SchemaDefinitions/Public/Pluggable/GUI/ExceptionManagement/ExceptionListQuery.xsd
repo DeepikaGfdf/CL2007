@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/ExceptionManagement/ExceptionListQuery" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/ExceptionManagement/ExceptionListQuery">
+	<xsd:element name="ExceptionListQuery">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" name="AppIDFrom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="AppIDTo" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="AuxIDFrom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="AuxIDTo" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionDomainFrom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionDomainTo" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DocIDFrom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DocIDTo" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DateFrom" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DateTo" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="OrderBy" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

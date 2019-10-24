@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.example.com/unique/default/namespace/1163206731086" xmlns:ns2="http://www.tibco.com/CommonLE2/Public/Common" xmlns:ns3="http://www.tibco.com/CommonLE2/namespace/Public/Logging" xmlns:ns4="http://www.tibco.com/CommonLE2/namespace/Public/Logging/LogRequest.xsd" xmlns:pfx0="http://www.tibco.com/CommonLE2/namespace/Log" xmlns:tns="http://www.tibco.com/CommonLE2/namespace/LogRequest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/CommonLE2/namespace/LogRequest">
+    <import location="../../SchemaDefinitions/Public/Common/ErrorMessage.xsd" namespace="http://www.tibco.com/CommonLE2/Public/Common"/>
+    <import location="../../SchemaDefinitions/Public/Logging/LogRequest.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Logging/LogRequest.xsd"/>
+    <message name="LogRequest">
+        <part element="ns4:LogRequest" name="parameters"/>
+    </message>
+    <message name="Error">
+        <part element="ns2:Error" name="ErrorParam"/>
+    </message>
+    <message name="Dummy"/>
+    <portType name="portType">
+        <operation name="Handle_sp_Log_sp_RequestOp">
+            <input message="tns:LogRequest"/>
+            <output message="tns:Dummy"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+    </portType>
+</definitions>

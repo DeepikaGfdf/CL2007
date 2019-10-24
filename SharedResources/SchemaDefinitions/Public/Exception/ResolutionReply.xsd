@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Exception/ResolutionReply.xsd" xmlns:Common="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public/Exception/ResolutionReply.xsd">
+	<xsd:import namespace="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" schemaLocation="../Common/RequestHeader.xsd"/>
+	<xsd:element name="ResolutionReply">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Common:Header"/>
+				<xsd:element name="ExceptionCode" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResolutionDescription" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+				<xsd:element name="ReplyTimestamp" type="xsd:dateTime"/>
+				<xsd:element minOccurs="0" name="ReplyType" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionData" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="UpdatedTransactionData" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Destination" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

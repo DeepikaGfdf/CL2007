@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:smtp="http://xsd.tns.tibco.com/bw/models/sharedresource/smtp" xmi:id="_0vsm4D4vEei9CO6viOvAbg" name="Pluggable.Notification.Connector.GenericEmailNotificationConnector-Send-Mail-SMTPResource" type="smtp:SmtpConfiguration">
+  <jndi:configuration xsi:type="smtp:SmtpConfiguration" xmi:id="_0vsm4T4vEei9CO6viOvAbg">
+    <tcpDetails xmi:id="_0vsm4j4vEei9CO6viOvAbg" port="25">
+      <substitutionBindings xmi:id="_0vvqMD4vEei9CO6viOvAbg" template="host" propName="ExceptionService/Email/MIG_MailServer"/>
+    </tcpDetails>
+    <userCredentials xmi:id="_0vsm4z4vEei9CO6viOvAbg"/>
+  </jndi:configuration>
+</jndi:namedResource>

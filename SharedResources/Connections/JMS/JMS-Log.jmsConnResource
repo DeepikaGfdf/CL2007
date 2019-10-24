@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_ovKNMD4vEei9CO6viOvAbg" name="SharedResources.Connections.JMS.JMS-Log" type="jms:JMSConnectionFactory">
+  <jndi:description>The JMS Connections for Log and Exception requests are purposely separated for performance reasons. </jndi:description>
+  <jndi:reference xmi:id="_VyHpcPiBEei2MNy-AJ4fgQ" key="jndiConnectionJNDIName" type="jms:JNDIConnection" value="SharedResources.Connections.JMS.JMS-LogJNDI"/>
+  <jndi:configuration xsi:type="jms:JNDIConnectionFactory" xmi:id="_VtSMwPiBEei2MNy-AJ4fgQ" factoryType="Queue/Topic">
+    <substitutionBindings xmi:id="_lUtNkPiBEei2MNy-AJ4fgQ" template="jndiName" propName="JMSServer/MIG_QueueConnectionFactory"/>
+    <substitutionBindings xmi:id="_mtciIPiBEei2MNy-AJ4fgQ" template="topicFactoryJNDIName" propName="JMSServer/MIG_TopicConnectionFactory"/>
+    <userCredentials xmi:id="_K8yzwPiDEei2MNy-AJ4fgQ">
+      <substitutionBindings xmi:id="_Lc86gPiDEei2MNy-AJ4fgQ" template="username" propName="JMSServer/MIG_JNDIUser"/>
+      <substitutionBindings xmi:id="_N45_kPiDEei2MNy-AJ4fgQ" template="password" propName="JMSServer/MIG_JNDIPassword"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:ExceptionRequest="http://www.tibco.com/CommonLE2/Namespace/ExceptionRequest" xmlns:LogRequest="http://www.tibco.com/CommonLE2/namespace/LogRequest" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:property="http://ns.tibco.com/bw/property" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmlns:smtp="http://xsd.tns.tibco.com/bw/models/sharedresource/smtp" xmi:id="_oKXeED4vEei9CO6viOvAbg" targetNamespace="http://tns.tibco.com/bw/composite/CLE2007Integrated" name="CLE2007Integrated" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_4Jbi0T4vEei9CO6viOvAbg" name="Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-serviceportType" promote="Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-serviceComponent/Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-serviceportType">
+    <sca:interface.wsdl xmi:id="_4Jo-MD4vEei9CO6viOvAbg" interface="http://www.tibco.com/CommonLE2/Namespace/ExceptionRequest#wsdl.interface(portType)" scaext:wsdlLocation="../SharedResources/WSDL/Core/Handle_Exception_Request.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_4J75IT4vEei9CO6viOvAbg" name="intfwsHandle_Exception_RequestEndpoint1" targetNamespace="http://www.tibco.com/CommonLE2/Namespace/ExceptionRequest/intfwsHandle_Exception_RequestEndpoint1" portTypeQName="ExceptionRequest:portType" transportBindingType="HTTP" modelVersion="1.1.0">
+      <bindingType xmi:id="_4J75Ij4vEei9CO6viOvAbg"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_4J75Iz4vEei9CO6viOvAbg" endpointURI="/ExceptionManagement/Logic/intfHandle_Exception_Request-service.serviceagent/intfwsHandle_Exception_RequestEndpoint1" httpConnector="SharedResources.Connections.SOAP.HTTP-Exception"/>
+      <operationConfiguration xmi:id="_4J75JD4vEei9CO6viOvAbg" operationName="Handle_sp_Exception_sp_RequestOp" action="/ExceptionManagement/Logic/intfHandle_Exception_Request-service.serviceagent/intfwsHandle_Exception_RequestEndpoint1/Handle_sp_Exception_sp_RequestOp">
+        <bindingType xmi:id="_4J75JT4vEei9CO6viOvAbg"/>
+        <messageConfiguration xmi:id="_4J75Jj4vEei9CO6viOvAbg" messageQName="ExceptionRequest:ExceptionRequest">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4J75Jz4vEei9CO6viOvAbg" partName="parameters" encoding="literal"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4J75KD4vEei9CO6viOvAbg" messageQName="ExceptionRequest:Dummy" messageDirection="OUTPUT"/>
+        <messageConfiguration xmi:id="_4J75KT4vEei9CO6viOvAbg" messageQName="ExceptionRequest:Error" messageDirection="FAULT">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4J75Kj4vEei9CO6viOvAbg" partName="ErrorParam" encoding="literal"/>
+        </messageConfiguration>
+        <context xmi:id="_4J75Kz4vEei9CO6viOvAbg">
+          <inputMapping xmi:id="_4J75LD4vEei9CO6viOvAbg"/>
+          <outputMapping xmi:id="_4J75LT4vEei9CO6viOvAbg"/>
+          <faultMappings xmi:id="_4J75Lj4vEei9CO6viOvAbg" direction="FAULT" faultName="fault1"/>
+        </context>
+      </operationConfiguration>
+      <outboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_4J75Lz4vEei9CO6viOvAbg" endpointURI="/ExceptionManagement/Logic/intfHandle_Exception_Request-service.serviceagent/intfwsHandle_Exception_RequestEndpoint1"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_4J75ID4vEei9CO6viOvAbg" bindingName="intfwsHandle_Exception_RequestEndpoint1"/>
+  </sca:service>
+  <sca:service xmi:id="_4LkQ0D4vEei9CO6viOvAbg" name="Service.Logging_LogServices_Handle_Log_Request-serviceportType" promote="Service.Logging_LogServices_Handle_Log_Request-serviceComponent/Service.Logging_LogServices_Handle_Log_Request-serviceportType">
+    <sca:interface.wsdl xmi:id="_4Lk34D4vEei9CO6viOvAbg" interface="http://www.tibco.com/CommonLE2/namespace/LogRequest#wsdl.interface(portType)" scaext:wsdlLocation="../SharedResources/WSDL/Core/Handle_Log_Request.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_4Lk34j4vEei9CO6viOvAbg" name="intfwsHandle_Log_RequestEndpoint2" targetNamespace="http://www.tibco.com/CommonLE2/namespace/LogRequest/intfwsHandle_Log_RequestEndpoint2" portTypeQName="LogRequest:portType" transportBindingType="HTTP" modelVersion="1.1.0">
+      <bindingType xmi:id="_4Lk34z4vEei9CO6viOvAbg"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_4Lk35D4vEei9CO6viOvAbg" endpointURI="/Logging/Logic/intfHandle_Log_Request-service.serviceagent/intfwsHandle_Log_RequestEndpoint2" httpConnector="SharedResources.Connections.SOAP.HTTP-Log"/>
+      <operationConfiguration xmi:id="_4Lk35T4vEei9CO6viOvAbg" operationName="Handle_sp_Log_sp_RequestOp" action="/Logging/Logic/intfHandle_Log_Request-service.serviceagent/intfwsHandle_Log_RequestEndpoint2/Handle_sp_Log_sp_RequestOp">
+        <bindingType xmi:id="_4Lk35j4vEei9CO6viOvAbg"/>
+        <messageConfiguration xmi:id="_4Lk35z4vEei9CO6viOvAbg" messageQName="LogRequest:LogRequest">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4Lk36D4vEei9CO6viOvAbg" partName="parameters" encoding="literal"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4Lk36T4vEei9CO6viOvAbg" messageQName="LogRequest:Dummy" messageDirection="OUTPUT"/>
+        <messageConfiguration xmi:id="_4Lk36j4vEei9CO6viOvAbg" messageQName="LogRequest:Error" messageDirection="FAULT">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4Lk36z4vEei9CO6viOvAbg" partName="ErrorParam" encoding="literal"/>
+        </messageConfiguration>
+        <context xmi:id="_4Lk37D4vEei9CO6viOvAbg">
+          <inputMapping xmi:id="_4Lk37T4vEei9CO6viOvAbg"/>
+          <outputMapping xmi:id="_4Lk37j4vEei9CO6viOvAbg"/>
+          <faultMappings xmi:id="_4Lk37z4vEei9CO6viOvAbg" direction="FAULT" faultName="fault1"/>
+        </context>
+      </operationConfiguration>
+      <outboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_4Lk38D4vEei9CO6viOvAbg" endpointURI="/Logging/Logic/intfHandle_Log_Request-service.serviceagent/intfwsHandle_Log_RequestEndpoint2"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_4Lk34T4vEei9CO6viOvAbg" bindingName="intfwsHandle_Log_RequestEndpoint2"/>
+  </sca:service>
+  <sca:property xmi:id="_oKXeET4vEei9CO6viOvAbg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeEj4vEei9CO6viOvAbg" name="BW.APPNODE.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeEz4vEei9CO6viOvAbg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeFD4vEei9CO6viOvAbg" name="BW.HOST.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeFT4vEei9CO6viOvAbg" name="BW.DOMAIN.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeFj4vEei9CO6viOvAbg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeFz4vEei9CO6viOvAbg" name="BW.APPSPACE.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeGD4vEei9CO6viOvAbg" name="BW.MODULE.VERSION" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oKXeGT4vEei9CO6viOvAbg" name="BW.MODULE.NAME" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qhEPsD4vEei9CO6viOvAbg" name="SharedResourcesConnectionsDatabaseDBServerOracle" type="jdbc:JdbcDataSource" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qlEl8D4vEei9CO6viOvAbg" name="Database-MIG_Timeout-1" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qnBtwD4vEei9CO6viOvAbg" name="Database-MIG_Timeout-2" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_u6MzID4vEei9CO6viOvAbg" name="SharedResourcesConnectionsJMSJMS-Exception" type="jms:JMSConnectionFactory" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wJ3rQD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_ExceptionQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xsG6ED4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_WorkflowRequestQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yAcyYD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_ResolutionQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_z7Y1ED4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_LogQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0PbLYD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_NotificationQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0ThBMD4vEei9CO6viOvAbg" name="BusinessEmailNotificationConnector-Send-Mail-SMTPResource" type="smtp:SmtpConfiguration" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0rCJUD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_GenericNotificationQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0uj-cD4vEei9CO6viOvAbg" name="GenericEmailNotificationConnector-Send-Mail-SMTPResource" type="smtp:SmtpConfiguration" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1E-TUD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_InformationNotificationQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1IL_YD4vEei9CO6viOvAbg" name="InformationEmailNotificationConnector-Send-Mail-SMTPResource" type="smtp:SmtpConfiguration" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1ggYwD4vEei9CO6viOvAbg" name="JMSDestinationNames-MIG_TechnicalNotificationQueue-1" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1j7gMD4vEei9CO6viOvAbg" name="TechnicalEmailNotificationConnector-Send-Mail-SMTPResource" type="smtp:SmtpConfiguration" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oh83oD4vEei9CO6viOvAbg" name="Database/MIG_DBURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oh83oT4vEei9CO6viOvAbg" name="Database/MIG_MaxConnection" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oh9esD4vEei9CO6viOvAbg" name="Database/MIG_User" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oh9esT4vEei9CO6viOvAbg" name="Database/MIG_Password" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_qXNwID4vEei9CO6viOvAbg" name="Database/MIG_Timeout" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sDMJwD4vEei9CO6viOvAbg" name="Database/MIG_MAXROWS" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_t2Qp4D4vEei9CO6viOvAbg" name="Database/MIG_DatabaseType" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf8D4vEei9CO6viOvAbg" name="JMSServer/MIG_JNDIContextURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf8T4vEei9CO6viOvAbg" name="JMSServer/MIG_TopicConnectionFactory" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf8j4vEei9CO6viOvAbg" name="JMSServer/MIG_QueueConnectionFactory" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf8z4vEei9CO6viOvAbg" name="JMSServer/MIG_JNDIUser" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf9D4vEei9CO6viOvAbg" name="JMSServer/MIG_JNDIPassword" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf9T4vEei9CO6viOvAbg" name="JMSServer/MIG_UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf9j4vEei9CO6viOvAbg" name="JMSServer/MIG_Password" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oqFf9z4vEei9CO6viOvAbg" name="JMSServer/MIG_ClientID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_w8bJkD4vEei9CO6viOvAbg" name="JMSServer/MIG_JMSExpiration" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ovdIID4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_ExceptionPort" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ovdIIT4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_ExceptionHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ox3i8D4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_ExceptionPort0" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ox3i8j4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_LogReqHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ox3i8z4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_LogReqPort" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o0D7UD4vEei9CO6viOvAbg" name="SOAPServer/CoreServices/MIG_LogReqPort0" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o0HlsD4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_AdministrationHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o0HlsT4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_AdministrationPort" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o3wIgT4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_AdministrationPort0" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o355gD4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_ExceptionRuntimeHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o355gT4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_ExceptionRuntimePort" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o6HgAD4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_ExceptionRuntimePort0" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o6HgAj4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_LogRuntimeHost" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o6HgAz4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_LogRuntimePort" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o8YJ4z4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_LogRuntimePort0" type="XMLSchema:int" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o8-mwD4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_CertFile" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_o8-mwT4vEei9CO6viOvAbg" name="SOAPServer/GUIServices/MIG_CertPassword" type="property:password" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_q0zEAD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/NoUserApps" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sEvo8D4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/RenderingRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_siIIgD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/RenderingXSLTError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tXpbQD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/TooManyRecords" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_t75-4D4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/ApplicationIDNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_uA07ID4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/RenderingIDNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vI7ysD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/InvalidDestination" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wDKmUD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/InternalError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2duO8D4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/TIBCOAdminUserFRolesRetrievalError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2hWxwD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/TIBCOAdminConnectionError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2wYsQD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/UserAuthorizatoinError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_27_fUD4vEei9CO6viOvAbg" name="Exceptions/Common/Messages/UserAuthenticationError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sFZwQD4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/RenderingRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_shnyMD4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/RenderingXSLTError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_t-bucD4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/ApplicationIDNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_uDZG8D4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/RenderingIDNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wDogYD4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/InternalError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2eBw8D4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/TIBCOAdminConnectionError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2xITID4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/UserAuthorizationError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_28SaQD4vEei9CO6viOvAbg" name="Exceptions/Common/Codes/UserAuthenticationError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_q6k74D4vEei9CO6viOvAbg" name="Exceptions/DB/Codes/SQLRecordNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_uFv3YD4vEei9CO6viOvAbg" name="Exceptions/DB/Codes/SQLIntegrityError" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_uIr2oD4vEei9CO6viOvAbg" name="Exceptions/DB/Codes/SQLIntegrityState" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rKlt0D4vEei9CO6viOvAbg" name="Exceptions/DB/Messages/DBRecordNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_s5nbcD4vEei9CO6viOvAbg" name="Exceptions/Exception/Message/ExceptionRecordNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_s6aFoD4vEei9CO6viOvAbg" name="Exceptions/Exception/Code/ExceptionRecordNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xhPt4D4vEei9CO6viOvAbg" name="Exceptions/Log/Messages/LogDetailRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_ymdCcD4vEei9CO6viOvAbg" name="Exceptions/Log/Messages/LogListRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xh51MD4vEei9CO6viOvAbg" name="Exceptions/Log/Codes/LogDetailRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_yocmgD4vEei9CO6viOvAbg" name="Exceptions/Log/Codes/LogListRecNotFound" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rb_m4D4vEei9CO6viOvAbg" name="Riverbed/useDefaultExceptionCode" type="XMLSchema:boolean" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_a1g1cD4yEei9CO6viOvAbg" name="Riverbed/defaultAppId" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_a9wLcD4yEei9CO6viOvAbg" name="Riverbed/defaultExceptionCode" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tk2w0D4vEei9CO6viOvAbg" name="ExceptionService/ExceptionRequestType" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_w2wmcD4vEei9CO6viOvAbg" name="ExceptionService/SuspendExceptionRequestStarter" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rv72kD4vEei9CO6viOvAbg" name="ExceptionService/ResolutionStatus/Resolved" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_rw440D4vEei9CO6viOvAbg" name="ExceptionService/ResolutionStatus/Replied" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tpojID4vEei9CO6viOvAbg" name="ExceptionService/ResolutionStatus/New" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vAXskD4vEei9CO6viOvAbg" name="ExceptionService/ResolutionStatus/Notified" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vS4_8D4vEei9CO6viOvAbg" name="ExceptionService/ResolutionStatus/PendingProcedure" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0NOL8T4vEei9CO6viOvAbg" name="ExceptionService/Email/MIG_MailServer" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0W66gD4vEei9CO6viOvAbg" name="ExceptionService/Email/MIG_MailFrom" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0YUosD4vEei9CO6viOvAbg" name="ExceptionService/Email/OverwriteEmailReceipientList" type="XMLSchema:boolean" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0Zr6oD4vEei9CO6viOvAbg" name="ExceptionService/Email/DefaultEmailRecipientList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0bGP4D4vEei9CO6viOvAbg" name="ExceptionService/Email/BusinessEmailRecipientToList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0cjBYD4vEei9CO6viOvAbg" name="ExceptionService/Email/BusinessEmailRecipientCcList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0dpNkD4vEei9CO6viOvAbg" name="ExceptionService/Email/CLE_URL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_01P1QD4vEei9CO6viOvAbg" name="ExceptionService/Email/GenericEmailRecipientToList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_02M3gD4vEei9CO6viOvAbg" name="ExceptionService/Email/GenericEmailRecipientCcList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1ONu4D4vEei9CO6viOvAbg" name="ExceptionService/Email/InformationEmailRecipientToList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1PLYMD4vEei9CO6viOvAbg" name="ExceptionService/Email/InformationEmailRecipientCcList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1p9PsD4vEei9CO6viOvAbg" name="ExceptionService/Email/TechnicalEmailRecipientToList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1q4cwD4vEei9CO6viOvAbg" name="ExceptionService/Email/TechnicalEmailRecipientCcList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_scZT8D4vEei9CO6viOvAbg" name="Rendering/HTMLHead" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sc_w4D4vEei9CO6viOvAbg" name="Rendering/HTMLBody" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_sdzCID4vEei9CO6viOvAbg" name="Rendering/HTMLHeadClose" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_spxBkD4vEei9CO6viOvAbg" name="ReservedIDs/DummyID" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_voD-sD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_WorkflowRequestQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vogqoD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_ResolutionQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_wG9hMD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_ExceptionQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_z5LOkD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_LogQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0NOL8D4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_NotificationQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0o1J4D4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_GenericNotificationQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1CoxAD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_InformationNotificationQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1eJoUD4vEei9CO6viOvAbg" name="JMSDestinationNames/MIG_TechnicalNotificationQueue" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zJGcgD4vEei9CO6viOvAbg" name="LogService/LogRequestType" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0JlpID4vEei9CO6viOvAbg" name="LogService/SuspendLogRequestStarter" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2mLnYD4vEei9CO6viOvAbg" name="Security/MIG_AdministratorRoleName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_w5ejQD4vEei9CO6viOvAbg" name="ExceptionManagement.ExceptionServices.JMS-ChannelComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_w5ejQT4vEei9CO6viOvAbg" processName="ExceptionManagement.ExceptionServices.JMS-Channel"/>
+  </sca:component>
+  <sca:component xmi:id="_x7h2ID4vEei9CO6viOvAbg" name="ExceptionManagement.WorkflowServices.OnGetExceptionRequestComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_x7h2IT4vEei9CO6viOvAbg" processName="ExceptionManagement.WorkflowServices.OnGetExceptionRequest"/>
+  </sca:component>
+  <sca:component xmi:id="_yKcb4D4vEei9CO6viOvAbg" name="ExceptionManagement.WorkflowServices.OnHandlingCompleteComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_yKcb4T4vEei9CO6viOvAbg" processName="ExceptionManagement.WorkflowServices.OnHandlingComplete"/>
+  </sca:component>
+  <sca:component xmi:id="_0Kg2MD4vEei9CO6viOvAbg" name="Logging.LogServices.JMSChannelComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_0Kg2MT4vEei9CO6viOvAbg" processName="Logging.LogServices.JMSChannel"/>
+  </sca:component>
+  <sca:component xmi:id="_0mK3cD4vEei9CO6viOvAbg" name="Pluggable.Notification.Connector.BusinessEmailNotificationConnectorComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_0mK3cT4vEei9CO6viOvAbg" processName="Pluggable.Notification.Connector.BusinessEmailNotificationConnector"/>
+  </sca:component>
+  <sca:component xmi:id="_1ANIED4vEei9CO6viOvAbg" name="Pluggable.Notification.Connector.GenericEmailNotificationConnectorComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_1ANIET4vEei9CO6viOvAbg" processName="Pluggable.Notification.Connector.GenericEmailNotificationConnector"/>
+  </sca:component>
+  <sca:component xmi:id="_1bcSkD4vEei9CO6viOvAbg" name="Pluggable.Notification.Connector.InformationEmailNotificationConnectorComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_1bcSkT4vEei9CO6viOvAbg" processName="Pluggable.Notification.Connector.InformationEmailNotificationConnector"/>
+  </sca:component>
+  <sca:component xmi:id="_10BKoD4vEei9CO6viOvAbg" name="Pluggable.Notification.Connector.TechnicalEmailNotificationConnectorComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_10BKoT4vEei9CO6viOvAbg" processName="Pluggable.Notification.Connector.TechnicalEmailNotificationConnector"/>
+  </sca:component>
+  <sca:component xmi:id="_4JIn4D4vEei9CO6viOvAbg" name="Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-serviceComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4JIn4T4vEei9CO6viOvAbg" processName="Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-service"/>
+    <sca:service xmi:id="_4JRx0D4vEei9CO6viOvAbg" name="Service.ExceptionManagement_ExceptionServices_Handle_Exception_Request-serviceportType">
+      <sca:interface.wsdl xmi:id="_4Jbi0D4vEei9CO6viOvAbg" interface="http://www.tibco.com/CommonLE2/Namespace/ExceptionRequest#wsdl.interface(portType)" scaext:wsdlLocation="../SharedResources/WSDL/Core/Handle_Exception_Request.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_4LjCsD4vEei9CO6viOvAbg" name="Service.Logging_LogServices_Handle_Log_Request-serviceComponent" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_4LjCsT4vEei9CO6viOvAbg" processName="Service.Logging_LogServices_Handle_Log_Request-service"/>
+    <sca:service xmi:id="_4LjCsj4vEei9CO6viOvAbg" name="Service.Logging_LogServices_Handle_Log_Request-serviceportType">
+      <sca:interface.wsdl xmi:id="_4LjCsz4vEei9CO6viOvAbg" interface="http://www.tibco.com/CommonLE2/namespace/LogRequest#wsdl.interface(portType)" scaext:wsdlLocation="../SharedResources/WSDL/Core/Handle_Log_Request.wsdl"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_IXbhcELQEei8LPQ9_ZGKvQ" name="ComponentJMSSender" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_IXbhcULQEei8LPQ9_ZGKvQ" processName="cle2007integrated.JMSSender"/>
+  </sca:component>
+  <sca:component xmi:id="_nmZOEEOwEeiYTZzcT4HiTA" name="ComponentJMSLogQueueSender" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_nmZOEUOwEeiYTZzcT4HiTA" processName="cle2007integrated.JMSLogQueueSender"/>
+  </sca:component>
+</sca:composite>

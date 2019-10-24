@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/Workflow/ExceptionReply" xmlns:Common="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" xmlns:ErrorMessage="http://www.tibco.com/CommonLE2/Public/Common" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/Workflow/ExceptionReply">
+	<xsd:import namespace="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" schemaLocation="../../Common/RequestHeader.xsd"/>
+	<xsd:import namespace="http://www.tibco.com/CommonLE2/Public/Common" schemaLocation="../../Common/ErrorMessage.xsd"/>
+	<xsd:element name="ExceptionDetail">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Common:Header"/>
+				<xsd:element name="ExceptionInstanceID" type="xsd:string"/>
+				<xsd:element name="ExceptionCode" type="xsd:string"/>
+				<xsd:element name="Category" type="xsd:string"/>
+				<xsd:element name="Type" type="xsd:string"/>
+				<xsd:element name="Severity" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Message" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionData" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DumpAnalysis" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="DataEncoding" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Timeout" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ReplyDestination" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="NotificationChannel" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ResolutionDescription" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Status" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExceptionReply">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" ref="ExceptionDetail"/>
+				<xsd:element minOccurs="0" ref="ErrorMessage:Error"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

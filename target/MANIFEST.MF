@@ -1,0 +1,36 @@
+Manifest-Version: 1.0.0.201910250111
+Bundle-SymbolicName: CLE2007Integrated
+Bundle-ManifestVersion: 2
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",com.tib
+ co.bw.palette; filter:="(name=bw.generalactivities)",com.tibco.bw.pal
+ ette; filter:="(name=bw.jdbc)",com.tibco.bw.palette; filter:="(name=b
+ w.mail)",com.tibco.bw.palette; filter:="(name=bw.jms)",com.tibco.bw.p
+ alette; filter:="(name=bw.xml)",com.tibco.bw.sharedresource.model; fi
+ lter:="(name=bw.httpconnector)",com.tibco.bw.sharedresource.model; fi
+ lter:="(name=bw.jdbc)",com.tibco.bw.sharedresource.model; filter:="(n
+ ame=bw.jmsconnection)",com.tibco.bw.sharedresource.model; filter:="(n
+ ame=bw.jndiconfiguration)",com.tibco.bw.sharedresource.model; filter:
+ ="(name=bw.cred)",com.tibco.bw.sharedresource.model; filter:="(name=b
+ w.smtp)",com.tibco.bw.binding.model; filter:="(name=bw.soap)"
+Import-Package: com.tibco.bw.palette.java.runtime,com.tibco.bw.runtime
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-Version: 6.4.2 HF3 V51 2018-02-22
+Bundle-Name: CLE2007Integrated
+Bundle-Version: 1.0.0.201910250111
+Bundle-ClassPath: .,lib/sonar-runner-api-2.4.jar,lib/plexus-utils-1.5.
+ 5.jar,lib/maven-repository-metadata-2.2.0.jar,lib/maven-dependency-tr
+ ee-2.1.jar,lib/plexus-sec-dispatcher-1.4.jar,lib/commons-lang-2.6.jar
+ ,lib/sonar-maven-plugin-2.6.jar,lib/wagon-provider-api-1.0-beta-6.jar
+ ,lib/plexus-container-default-1.0-alpha-9-stable-1.jar,lib/maven-plug
+ in-registry-2.2.0.jar,lib/junit-3.8.1.jar,lib/maven-model-2.2.0.jar,l
+ ib/jsr305-2.0.3.jar,lib/backport-util-concurrent-3.1.jar,lib/maven-pr
+ ofile-2.2.0.jar,lib/plexus-component-annotations-1.5.5.jar,lib/maven-
+ project-2.2.0.jar,lib/maven-artifact-manager-2.2.0.jar,lib/plexus-int
+ erpolation-1.11.jar,lib/plexus-cipher-1.4.jar,lib/maven-artifact-2.2.
+ 0.jar,lib/maven-settings-2.2.0.jar,lib/guava-10.0.1.jar,lib/sonar-mav
+ en-plugin-5.1.jar,lib/aether-util-0.9.0.M2.jar
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+

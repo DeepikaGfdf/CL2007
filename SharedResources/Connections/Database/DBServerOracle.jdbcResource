@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_op3dgD4vEei9CO6viOvAbg" name="SharedResources.Connections.Database.DBServerOracle" type="jdbc:JdbcDataSource">
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_op3dgT4vEei9CO6viOvAbg" username="%%Database/MIG_User%%" password="%%Database/MIG_Password%%">
+    <substitutionBindings xmi:id="_op3dgj4vEei9CO6viOvAbg" template="maxConnections" propName="Database/MIG_MaxConnection"/>
+    <substitutionBindings xmi:id="_op3dgz4vEei9CO6viOvAbg" template="maxConnections" propName="Conn"/>
+    <substitutionBindings xmi:id="_op3dhj4vEei9CO6viOvAbg" template="username" propName="Database/MIG_User"/>
+    <substitutionBindings xmi:id="_oqB1kD4vEei9CO6viOvAbg" template="password" propName="Database/MIG_Password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_op3dhD4vEei9CO6viOvAbg" jdbcDriver="tibcosoftwareinc.jdbc.oracle.OracleDriver" loginTimeout="0" dbURL="%%Database/MIG_DBURL%%">
+      <substitutionBindings xmi:id="_op3dhT4vEei9CO6viOvAbg" template="dbURL" propName="Database/MIG_DBURL"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

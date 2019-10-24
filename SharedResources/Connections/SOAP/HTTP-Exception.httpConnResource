@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_oxuZAD4vEei9CO6viOvAbg" name="SharedResources.Connections.SOAP.HTTP-Exception" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_oxuZAT4vEei9CO6viOvAbg" lingerTime="60000" uriEncoding="">
+    <substitutionBindings xmi:id="_oxuZAj4vEei9CO6viOvAbg" template="host" propName="SOAPServer/CoreServices/MIG_ExceptionHost"/>
+    <substitutionBindings xmi:id="_ox3i8T4vEei9CO6viOvAbg" template="port" propName="SOAPServer/CoreServices/MIG_ExceptionPort0"/>
+  </jndi:configuration>
+</jndi:namedResource>

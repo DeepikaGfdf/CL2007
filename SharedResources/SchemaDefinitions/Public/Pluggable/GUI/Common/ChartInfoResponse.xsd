@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public//Pluggable/GUI/Common/Response" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public//Pluggable/GUI/Common/Response">
+	<xsd:element name="AppInfo">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="AppID"/>
+				<xsd:element minOccurs="0" ref="AppName"/>
+				<xsd:element minOccurs="0" ref="AppDescription"/>
+				<xsd:element ref="LogCount"/>
+				<xsd:element ref="ExceptionCount"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExceptionCountInfo">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ExceptionResolveTypeName"/>
+				<xsd:element ref="ExceptionCountValue"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ExceptionPercentageChart">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="ExceptionCountInfo"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="LogExceptionCountChart">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded" ref="AppInfo"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ChartInfo">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ExceptionPercentageChart"/>
+				<xsd:element ref="LogExceptionCountChart"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AppID" type="xsd:string"/>
+	<xsd:element name="LogCount" type="xsd:int"/>
+	<xsd:element name="ExceptionCount" type="xsd:int"/>
+	<xsd:element name="AppName" type="xsd:string"/>
+	<xsd:element name="AppDescription" type="xsd:string"/>
+	<xsd:element name="ExceptionResolveTypeName" type="xsd:string"/>
+	<xsd:element name="ExceptionCountValue" type="xsd:int"/>
+</xsd:schema>

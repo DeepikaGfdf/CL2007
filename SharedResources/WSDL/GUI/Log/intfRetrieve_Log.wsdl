@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.example.com/unique/default/namespace/1163206731086" xmlns:ns2="http://www.tibco.com/CommonLE2/Public/Common" xmlns:ns3="http://www.tibco.com/CommonLE2/namespace/Public/Common/IDQuery" xmlns:ns4="http://www.tibco.com/CommonLE2/namespace/Public//Pluggable/'GUI/Common" xmlns:ns5="http://www.tibco.com/CommonLE2/namespace/Public//Pluggable/GUI/Common" xmlns:pfx0="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogDetailQuery" xmlns:pfx1="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogDetail" xmlns:pfx2="http://www.tibco.com/CommonLE2/namespace/private/Common" xmlns:pfx3="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogListQuery" xmlns:pfx4="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogList" xmlns:tns="http://www.tibco.com/CommonLE2/namespace/Logging/GUIServices" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Logging/GUIServices">
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Log/LogListQuery.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogListQuery"/>
+    <import location="../../../SchemaDefinitions/Private/Common/LocalExceptions.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/private/Common"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Log/LogDetail.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogDetail"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Log/LogList.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogList"/>
+    <import location="../../../SchemaDefinitions/Public/Common/ErrorMessage.xsd" namespace="http://www.tibco.com/CommonLE2/Public/Common"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Log/LogDetailQuery.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/GUI/Log/LogDetailQuery"/>
+    <import location="../../../SchemaDefinitions/Public/Pluggable/GUI/Common/IDQuery.xsd" namespace="http://www.tibco.com/CommonLE2/namespace/Public//Pluggable/GUI/Common"/>
+    <message name="Error">
+        <part element="ns2:Error" name="parameters"/>
+    </message>
+    <message name="LogDetail">
+        <part element="pfx1:LogDetail" name="parameters"/>
+    </message>
+    <message name="LogDetailQuery">
+        <part element="pfx0:LogDetailQuery" name="parameters"/>
+    </message>
+    <message name="LogList">
+        <part element="pfx4:LogList" name="parameters"/>
+    </message>
+    <message name="LogListQuery">
+        <part element="pfx3:LogListQuery" name="parameters"/>
+    </message>
+    <message name="LogDeleteQuery">
+        <part element="ns5:Query" name="parameters"/>
+    </message>
+    <message name="Dummy"/>
+    <portType name="portType">
+        <operation name="Retrieve_sp_Log_sp_DetailOp">
+            <input message="tns:LogDetailQuery"/>
+            <output message="tns:LogDetail"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="Retrieve_sp_Log_sp_ListOp">
+            <input message="tns:LogListQuery"/>
+            <output message="tns:LogList"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+        <operation name="DeleteLogOp">
+            <input message="tns:LogDeleteQuery"/>
+            <output message="tns:Dummy"/>
+            <fault message="tns:Error" name="fault1"/>
+        </operation>
+    </portType>
+</definitions>

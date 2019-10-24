@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Pluggable/Workflow" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.tibco.com/CommonLE2/Public/Plaggable/Workflow">
+	<xsd:element name="ProcedureInfo">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ExceptionID" type="xsd:positiveInteger"/>
+				<xsd:element name="RoleNme" type="xsd:string"/>
+				<xsd:element name="PhysicalProcedureName" type="xsd:string"/>
+				<xsd:element name="ProcedureDestination" type="xsd:string"/>
+				<xsd:element name="RequestDestination" type="xsd:string"/>
+				<xsd:element name="ReplyDestination" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

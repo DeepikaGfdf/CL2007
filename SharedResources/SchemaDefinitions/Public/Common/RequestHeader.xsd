@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tibco.com/CommonLE2/namespace/Public/Common/RequestHeader.xsd">
+	<xsd:element name="Header">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ApplicationID" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="ComponentName" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="Hostname" type="xsd:string"/>
+				<xsd:element name="Timestamp" type="xsd:dateTime"/>
+				<xsd:element minOccurs="0" name="TransactionDomain" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionType" type="xsd:string"/>
+				<xsd:element minOccurs="0" name="TransactionID" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
